@@ -1,0 +1,289 @@
+﻿<div class="main">
+                      				
+
+
+<h1 align="center"><strong> Передача параметров в апплет</strong></h1>
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+Предположим, вы разработали крутой <span lang="en-us">Java </span>апплет и 
+хотите его продавать. Естественно, исходный код вы распространять не желаете. 
+Но, может возникнуть такая ситуация, когда конечному пользователю вашего апплета 
+понадобиться перекомпилировать апплет с другими исходными данными. Как быть в 
+данной ситуации?&nbsp; </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Апплету 
+можно передать параметры, вот пример <span lang="en-us">HTML-</span>текста с 
+передачей параметров апплету:</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF99">
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+    &lt;html&gt;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">
+    &nbsp;&nbsp;&nbsp; </span></b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+    &lt;body&gt;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+    &lt;Applet</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red">
+    Code</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">=</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF">"configApplet.class"</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red">
+    Width</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">=</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red">600</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red">
+    Height</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">=</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red">200</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">&gt;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+    &lt;Param</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF0000">
+    name</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">=</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000">Text</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF0000">
+    value</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">=</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF">"</span><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:#8000FF">Некий</span><span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF">
+    </span>
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+color:#8000FF">текст</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF">"</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">&gt;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+    &lt;Param</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red">
+    name</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">=</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000">TypeSize</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red">
+    value</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">=</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red">20</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">&gt;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+    &lt;Param</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red">
+    name</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">=</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000">xpos</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red">
+    value</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">=</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red">180</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">&gt;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+    &lt;Param</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red">
+    name</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">=</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000">ypos</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red">
+    value</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">=</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red">100</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">&gt;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+    &lt;/Applet&gt;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black">
+    &nbsp;&nbsp;&nbsp; </span></b>
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:blue">
+    &lt;/body&gt;</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;line-height:115%;font-family:
+&quot;Courier New&quot;;color:blue">&lt;/html&gt;</span></p></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Чтобы 
+обработать на <span lang="en-us">Java </span>переданный параметр, можно 
+воспользоваться функцией getParameter, см. пример:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF99">
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    import</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    java</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">awt</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.*;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    import</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    java</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">applet</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.*;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    public</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    class</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    configApplet </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    extends</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    Applet </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; String str</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; Point position</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    public</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    void</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    init</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">()</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">&nbsp;
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; String s</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; str</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">getParameter</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF99">"Text"</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    if</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">str</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">==</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">null</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">)</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    str</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF99">"Default 
+    text"</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">getParameter</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF99">"TypeSize"</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    typeSize</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">Integer</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">parseInt</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">s</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">getParameter</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF99">"xpos"</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    xpos</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">Integer</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">parseInt</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">s</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">getParameter</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF99">"ypos"</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    ypos</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">Integer</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">parseInt</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">s</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">new</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    Point</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">xpos</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">ypos</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Font font</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">new</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    Font</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF99">"TimesRoman"</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">Font</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">PLAIN</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">typeSize</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setFont</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">font</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    }</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    public</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    void</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    paint</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">Graphics 
+    g</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">)</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; g</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">drawString</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">str</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">position</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">x</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">position</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">y</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    }</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    }</span></b></p></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">И вот что 
+нам выдаст такой пример:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Если 
+параметр не задан, то функция getParameter вернет <span lang="en-us">null.</span> 
+Таким образом, если мы хотим обрабатывать параметры по умолчанию, то нам надо 
+проверять результат, возвращенный этой функцией на <span lang="en-us">null,
+</span>примерно вот так:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF99">
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; str</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">getParameter</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF99">"Text"</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    if</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">str</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">==</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">null</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">)</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    str</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF99">"Default 
+    text"</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+			                  </div>

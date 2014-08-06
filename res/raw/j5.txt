@@ -1,0 +1,323 @@
+﻿<div class="main">
+                      				
+
+
+<h1 align="center"><strong> События (mouseDown, 
+mouseMove, Event).</strong></h1>
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+<i><b>Посмотреть пример апплета, разработанного на данном уроке, можно
+<a href="http://www.easyprog.ru/examples/java/lessons/6/1.html">здесь</a>.</b></i></p>
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+&nbsp;</p>
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+Сегодня мы займемся обработкой событий. События в системе <span lang="en-us">
+Windows </span>и других многозадачных системах могут быть разные: нажатие на 
+кнопочку мыши, нажатие на кнопку на клавиатуре, перемещение указателя мыши и 
+другие. <span lang="en-us">Java</span>-апплеты могут перехватывать такие события 
+и как то реагировать на на них.&nbsp; Для демонстрации этой возможности
+<span lang="en-us">Java </span>попробуем создать апплет, в котором можно 
+рисовать мышкой кривую линию:</p>
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+&nbsp;</p>
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+&nbsp;</p>
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+Для перехвата событий мыши в данном примере мы будет использовать 
+предопределенные методы класса <span lang="en-us">Applet mouseDown </span>и 
+mouseMove:</p>
+
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF99">
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    import</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    java</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">awt</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.*;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    import</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    java</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">applet</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.*;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    public</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    class</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    DrawExample </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    extends</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    Applet </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; Point startPoint</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; Point points</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">[];</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    numPoints</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    boolean</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    drawing</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    public</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    void</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    init</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">()</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">&nbsp;
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; startPoint</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    new</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    Point</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF99">0</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF99">0</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; points</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">new</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    Point</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">[</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF99">1000</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">];</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; drawing</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">false</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; resize</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF99">300</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF99">400</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    }</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    public</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    void</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    paint</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">Graphics 
+    g</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">)</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    oldX</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">startPoint</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">x</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    oldY</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">startPoint</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">y</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    for</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    i</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF99">0</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    i</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">&lt;</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">numPoints</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    ++</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">i</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">)</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; g</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">drawLine</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">oldX</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    oldY</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    points</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">[</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">i</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">].</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">x</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">points</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">[</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">i</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">].</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">y</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oldX</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">points</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">[</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">i</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">].</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">x</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oldY</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">points</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">[</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">i</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">].</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">y</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    }</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    }</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    public</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    boolean</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    mouseDown</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">Event 
+    evt</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    x</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    y</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">)</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    if</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(!</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">drawing</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">)</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; startPoint</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">x</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">x</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; startPoint</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">y</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">y</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    }</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; drawing</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=!</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">drawing</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    return</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    true</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    }</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    public</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    boolean</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    mouseMove </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    (</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">Event 
+    evt</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    x</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    y</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">)</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    if</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">((</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">drawing</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">)&amp;&amp;(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">numPoints</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">&lt;</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF99">1000</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">))</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; points</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">[</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">numPoints</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">]=</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">new</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    Point</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">x</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">y</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    ++</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">numPoints</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; repaint</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">();</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    }</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    return</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    true</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    }</span></b></p>
+    <p class="MsoNormal"><b>
+    <span style="font-size: 10.0pt; line-height: 115%; font-family: Courier New; color: navy; background: #FFFF99">
+    }</span></b></p></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Работает 
+этот апплет следующим образом: при нажатии на кнопочку мыши меняется режим 
+(переменная drawing<span lang="en-us">), </span>при перемещении мыши, если у нас 
+режим drawing включен, запоминается позиция, куда была перемещена мышь. В методе 
+paint, который отвечает за прорисовку апплета, мы просто соединяем эти точки 
+линией. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+			                  </div>

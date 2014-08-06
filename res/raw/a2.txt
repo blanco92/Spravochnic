@@ -1,0 +1,68 @@
+﻿<div id="ja-container" class="wrap ja-l1">
+					
+			
+					<div class="main clearfix">
+		
+				
+				<div id="ja-mainbody" style="width:100%">
+			<!-- CONTENT -->
+			<div id="ja-main" style="width:80%">
+			<div class="inner clearfix">
+				
+				
+<div id="system-message-container">
+</div>
+				
+				<div id="ja-contentwrap" class="clearfix ">
+					<div id="ja-content" class="column" style="width:100%">
+						<div id="ja-current-content" class="column" style="width:100%">
+														
+														<div id="ja-content-main" class="ja-content-main clearfix">
+								<div class="item-page">
+	<h2>
+			
+		 Элементы экрана и их свойства
+		</h2>
+
+	
+
+	<p>Давайте посмотрим, как в Андроид приложениях формируется то, что мы видим на экране.</p>
+<p>Если проводить аналогию с Windows, то приложение состоит из окон, называемых <strong>Activity</strong>. В конкретный момент времени обычно отображается одно Activity и занимает весь экран, а приложение переключается между ними. В качестве примера можно рассмотреть почтовое приложение. В нем одно Activity – список писем, другое – просмотр письма, третье – настройки ящика. При работе вы перемещаетесь по ним.</p>
+<p>Содержимое Activity формируется из различных компонентов, называемых <strong>View</strong>. Самые распространенные View - это кнопка, поле ввода, чекбокс и т.д.</p>
+<p>Примерно это можно изобразить так:</p>
+
+ 
+<p>Необходимо заметить, что View обычно размещаются в <strong>ViewGroup</strong>. Самый распространенный пример ViewGroup – это <strong>Layout</strong>. Layout бывает различных типов и отвечает за то, как будут расположены его дочерние View на экране (таблицей, строкой, столбцом …)</p>
+<p>Подробней об этом можно почитать в хелпе: <a href="http://developer.android.com/guide/topics/ui/index.html" mce_href="http://developer.android.com/guide/topics/ui/index.html">User Interface</a> и <a href="http://developer.android.com/guide/topics/ui/layout-objects.html" mce_href="http://developer.android.com/guide/topics/ui/layout-objects.html">Common Layout Objects</a>.</p>
+<p>Наверно уже запутал новыми словами и терминами, давайте посмотрим это все на практике. Создадим проект со следующими свойствами:</p>
+<p><strong>Project name</strong>: P0041_BasicViews<br><strong> Build Target</strong>: Android 2.3.3<br><strong> Application name</strong>: BasicViews<br><strong> Package name</strong>: ru.startandroid.develop.BasicViews<br><strong> Create Activity</strong>: MainActivity</p>
+<p>Если у вас свежая версия визарда создания проекта, то <b>Build Target</b> - это то же самое, что и <b>Build SDK</b>. А в экране создания Activity не забывайте указывать <b>main</b> в поле <b>Layout Name</b>. &nbsp;</p><p><br></p><p>В нашем проекте нам интересен файл: <strong>res &gt; layout &gt; main.xml</strong></p>
+
+<p>Это <strong>layout-файл</strong>, в нем мы определяем набор и расположение элементов View, которые хотим видеть на экране. При запуске приложения, Activity читает этот файл и отображает нам то, что мы настроили. Давайте откроем его и посмотрим, какой набор View он содержит по умолчанию.</p>
+<p>Слева видим список View, разделенный на группы. Здесь отображены все View-элементы, которые вы можете использовать в своих приложениях.</p><p>Возможно, у вас он будет немного другого вида. Это регулируется в меню Palette, чуть выше.</p><p>Обратим внимание на белый экран.&nbsp;Мы видим, что на экране сейчас присутствует элемент с текстом&nbsp;Hello world!&nbsp;Чтобы узнать, что это за View нажмите на этот текст. Справа во вкладке <strong>Outline </strong>вы видите все элементы, которые описаны в main.xml.</p><p>Видим, что выделенный нами элемент – это <strong>TextView</strong>. Обратите внимание, что он вложен в элемент <strong>RelativeLayout </strong>– это ViewGroup, про которые я писал выше.</p>
+<p>Добавим еще элементов на экран, пусть это будут <strong>Button </strong>и <strong>CheckBox</strong>. Для этого просто перетащите их из списка слева на белый экран вашего будущего приложения. Также можно перетащить их на RelativeLayout во вкладке Outline, результат будет почти тот же. Кроме Button и CheckBox, добавим еще на экран <strong>Plain Text</strong> из группы <strong>Text Fields</strong>.</p>
+<p>В Outline они появятся под названиями <strong>button1</strong>, <strong>checkBox1 </strong>и <strong>editText1</strong>. Это <strong>ID</strong>, которые им были присвоены автоматически. Пока оставим их такими, позднее научимся их менять и будем делать более осмысленными.</p>
+<p>Теперь на нашем экране несколько элементов. Давайте изменим надписи на них. Во вкладке Outline жмем на TextView. Теперь нам нужна вкладка <strong>Properties</strong>. Она отображает свойства выделенного в Outline или на экране View-элемента. Располагается она обычно сразу под Outline. </p><p>Найдем в Properties свойство <strong>Text</strong>. Сейчас там стоит ссылка на текстовую константу. Где создаются эти константы мы рассмотрим в следующих уроках, а пока просто давайте напишем сюда свой текст: «Какой-то текст»</p>
+
+<p>Аналогично изменим свойство Text для элементов button1, checkBox1 и editText1 на произвольные тексты. Все эти изменения пишутся в main.xml. Сохраним все CTRL+SHIFT+S и запустим CTRL+F11.</p>
+<p>Приложение отображает нам MainActivity, а оно в свою очередь читает файл main.xml и отображает все View, которые мы создавали и настраивали.</p>
+
+<p><br></p>
+<p>На этом уроке мы:</p>
+<p>узнали, что выводится на экран в Android-приложении<br> научились формировать layout-файл – добавлять View и настраивать их свойства</p>
+<p><br></p>
+<p>На следующем уроке мы:</p>
+<p>рассмотрим layout-файл с другого ракурса - XML<br> разберем, откуда Activity знает, какой layout-файл надо читать и попробуем настроить на чтение другого файла<br> узнаем, какой layout-файл используется при смене ориентации экрана (горизонтальная/вертикальная)<br><br></p>
+
+<div style="margin: 0px; position: static; overflow: hidden; height: 0px;"><div class="jfusionclearfix jfusionButtonConfirmationBox" id="jfusionButtonConfirmationBox13" style="margin: -16px 0px 0px; overflow: hidden;"></div></div>
+<div style="float:none; display:block;" id="discussion">
+
+</div><form style="display:none;" id="JFusionTaskForm" name="JFusionTaskForm" method="post" action="/uroki/vse-uroki-spiskom/13-urok-4-elementy-ekrana-i-ih-svojstva.html">
+<input type="hidden" name="articleId" value="">
+<input type="hidden" name="dbtask" value="">
+</form>
+
+
+		
+			
+					</div>

@@ -1,0 +1,472 @@
+﻿<div class="main">
+      
+
+<h1 align="center"><strong> Понятие интерфейса.</strong></h1>
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+<a href="http://easyprog.ru/index.php?option=com_content&amp;task=view&amp;id=640&amp;Itemid=29">На уроке 2</a> вы поднакопились с 
+таким понятием, как переменная.&nbsp; На самом же деле в переменных можно 
+хранить не только числа и строки, но так же и экземпляры объектов. Допустим, мы 
+хотим написать программу для автоматизации предприятия торговли. И в этой 
+программе хотим написать какой то алгоритм анализа товаров, для чего для каждого 
+вида товаров определяем свой класс, который будет содержать свои специфические 
+для данной товарной группы алгоритмы анализа. В данный момент мы, конечно, не 
+будем писать эту программу, а представим, что пишем ее, что бы просто изучить 
+понятие интерфейса и как оно поможет нам в будущим. Допустим, мы создали 
+заготовки классов для таких видов товаров, как "обувь" и "хлеб", и написали 
+тестовый пример:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF66">
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    class</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    Shoe </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    public</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    String getName</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    id</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    if</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">id</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">==</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">1</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    return</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"Shoes"</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    if</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">id</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">==</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">2</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    return</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"Girl's 
+    shoes"</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    if</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">id</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">==</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">3</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    return</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"Boots"</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    return</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    (</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"Unknow"</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    class</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    Bread </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    public</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    String getName</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">int</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    id</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    if</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">id</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">==</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">1</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    return</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"White"</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    if</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">id</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">==</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">2</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    return</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"Black"</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    if</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">id</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">==</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">3</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    return</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"Loaf"</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    return</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    (</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"Unknow"</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    public</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    class</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    Wares </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    public</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    static</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    void</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    main</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">String</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">[]</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    args</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Shoe a</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">=</span><span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">new</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    Shoe</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">();</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">println</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">a</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">getName</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">1</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">));</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">println</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">a</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">getName</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">2</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">));</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">println</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">a</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">getName</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">3</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">));</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">println</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">a</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">getName</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">4</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">));</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bread b</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">=</span><span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">new</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    Bread</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">();</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">println</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">b</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">getName</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">1</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">));</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">println</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">b</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">getName</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">2</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">));</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">println</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">b</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">getName</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">3</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">));</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b></p>
+    <p class="MsoNormal"><b>
+    <span style="font-size: 10.0pt; line-height: 115%; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b></p></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+Компилируем его, как мы это уже умеем на
+<a href="http://easyprog.ru/index.php?option=com_content&amp;task=view&amp;id=631&amp;Itemid=29">уроке 1</a> и запускаем:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">А теперь 
+посмотрите на код внимательней. Видите, для каждого класса (вида товара) мы 
+создали свою переменную. А если мы на момент создание переменой еще не знаем, 
+экземпляр какого класса мы будем хранить в ней? Мы же не можем присвоить 
+переменной тип <span lang="en-us">Shoe </span>значение <span lang="en-us">Bread</span>! 
+Но выход есть. Надо использовать интерфейс. Иными словами, создаем некоторое 
+подобие класса, которое по сути дела полноценным классом не является. Это и есть
+<i>интерфейс</i>. Мы не может создать экземпляр интерфейса, но можем определить 
+переменную типа интерфейс. И в этой переменной мы сможем хранить экземпляры 
+любых классов, которые наследую данный интерфейс. Собственно говоря, интерфейс 
+отличается от класса тем, что в нем можно объявить методы, но нельзя реализовать 
+их. Они уже реализуются в наследуемых классах. Давайте посмотрим на примере, как 
+это делается:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF66">
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    interface</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    Ware </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    static</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    final</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    String origin</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">=</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"My 
+    corp"</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    public</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    String getName</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    id</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    class</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    Shoe </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    implements</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    Ware </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    public</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    String getName</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    id</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    if</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">id</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">==</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">1</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    return</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"Shoes"</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    if</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">id</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">==</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">2</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    return</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"Girl's 
+    shoes"</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    if</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">id</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">==</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">3</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    return</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"Boots"</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    return</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    (</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"Unknow"</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    class</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    Bread </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    implements</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    Ware </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    public</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    String getName</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    id</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    if</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">id</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">==</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">1</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    return</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"White"</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    if</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">id</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">==</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">2</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    return</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"Black"</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    if</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">id</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">==</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">3</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    return</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"Loaf"</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    return</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    (</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"Unknow"</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp; </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    public</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    class</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    Proba </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    public</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    static</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    void</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    main</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">String</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">[]</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    args</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ware a</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">=</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">new</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    Shoe</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">();</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">println</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">a</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">getName</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">1</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">));</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">println</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">a</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">getName</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">2</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">));</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">println</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">a</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">getName</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">3</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">));</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">println</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">a</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">getName</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">4</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">));</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">=</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">new</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    Bread</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">();</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">println</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">a</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">getName</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">1</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">));</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">println</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">a</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">getName</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">2</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">));</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">println</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">a</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">getName</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF66">3</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">));</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b></p>
+    <p class="MsoNormal"><b>
+    <span style="font-size: 10.0pt; line-height: 115%; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b></p></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Как видим, 
+благодаря интерфейсу, мы можем использовать оду и ту же переменную для хранения 
+разных классов. Откомпилируем пример и убедимся, что он работает, делает то же 
+самое, что и предыдущий:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+			                  </div>

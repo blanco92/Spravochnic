@@ -1,0 +1,177 @@
+﻿<div class="main">
+                      	
+
+<h1 align="center"><strong> Простой апплет.</strong></h1>
+
+<p align="justify">Наконец то мы подошли к самому главному: программированию на
+<span lang="en-us">Java </span>для <span lang="en-us">&nbsp;Web, </span>ибо 
+сегодня мы напишем свой первый апплет. Конечно, начнем с самого простого<span lang="en-us">,
+</span>с <span lang="en-us">"Hello World!". </span>И так, вот текст этого 
+апплета:</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF99">
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    import</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    java</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">applet</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">Applet</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    import</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    java</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">awt</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">Graphics</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    public</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    class</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    HelloApplet </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    extends</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    Applet </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    public</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    void</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    paint</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">Graphics 
+    g</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">)</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; g</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">drawString</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF99">"Hello, 
+    world!"</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF99">0</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF99">50</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    }</span></b></p>
+    <p class="MsoNormal"><b>
+    <span style="font-size: 10.0pt; line-height: 115%; font-family: Courier New; color: navy; background: #FFFF99">
+    }</span></b></p></td>
+  </tr>
+</tbody></table>
+
+<p align="justify">В данном примере мы подключаем библиотеки <span lang="en-us">
+Applet - </span>для доступа к классу апплета и <span lang="en-us">Graphics -
+</span>для использования графических функций. В апплетах мы не можем выводить на 
+экран текст средствами библиотеки <span lang="en-us">System, </span>как мы это 
+делали при написании консольного приложения (см.
+<a href="http://easyprog.ru/index.php?option=com_content&amp;task=view&amp;id=631&amp;Itemid=29">урок 1</a> и
+<a href="http://easyprog.ru/index.php?option=com_content&amp;task=view&amp;id=640&amp;Itemid=29">урок 2</a>). Поэтому тут мы будем использовать немножко другие методы. В 
+частности, класс <span lang="en-us">Graphics</span>, который предназначен для 
+рисования в области поля апплета. И еще одно отличие от консольного приложения. 
+Тут нет класса с методом <span lang="en-us">main(). </span>Для реализации 
+апплета мы объявляем класс, дочерний от класса <span lang="en-us">Applet:</span></p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF99">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    public</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    class</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    HelloApplet </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    extends</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    Applet</span></td>
+  </tr>
+</tbody></table>
+<p>
+
+</p><p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Это 
+значит, что наш новый класс <span lang="en-us">HelloApplet - </span>будет иметь 
+все те же поля и методы, что и <span lang="en-us">Applet, </span>за исключением 
+тех методов, что мы переопределили. В данном случае это <span lang="en-us">paint 
+- </span>метод, отвечающий за прорисовку объекта. Программа, помещенная в нем, 
+будет запускаться каждый раз, когда будет происходить отрисовка апплета. В 
+данном случае эта программа, состоящая всего&nbsp; из одной строки:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF99">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">&nbsp;g</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">drawString</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF99">"Hello, 
+    world!"</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF99">0</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF99">50</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">будет 
+рисовать на экране текст <span lang="en-us">"Hello, world!" </span>в точке с 
+координатами 0,50.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">И так, 
+компилируем программу. У нас должен появиться файл HelloApplet.class. Теперь 
+тестируем его, создав простейший апплет содержащий <span lang="en-us">HTML-</span>файл:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF99">
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    &lt;html&gt;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span></b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    &lt;body&gt;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    &lt;Applet</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red; background: #FFFF99">
+    Code</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">=</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">"HelloApplet.class"</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red; background: #FFFF99">
+    Width</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">=</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red; background: #FFFF99">200</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red; background: #FFFF99">
+    Height</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">=</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red; background: #FFFF99">200</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">&gt;&lt;/Applet&gt;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span></b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    &lt;/body&gt;</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; line-height: 115%; font-family: Courier New; color: blue; background: #FFFF99">
+    &lt;/html&gt;</span></p></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">И 
+запускаем его на исполнение:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Теперь 
+попробуем изменить координаты, куда будет выводиться текст, например так:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF99">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">&nbsp;g</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">drawString</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF99">"Hello, 
+    world!"</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99"><b>,</b></span><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF99">100</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99"><b>,</b></span><span style="background-position: 0% 0%"><span style="background-color: #FFFF99"><font size="2" color="#FF8000"><span style="font-family: Courier New">2</span></font></span></span><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF99">0</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Теперь вид 
+апплета будет вот такой:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+
+			                  </div>

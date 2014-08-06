@@ -1,0 +1,201 @@
+﻿<div class="main">
+                      	
+
+<h1 align="center"><strong>
+Ввод данных с клавиатуры.</strong></h1><p>
+
+</p><p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Сегодня мы 
+рассмотрим более сложный пример. На прошлом уроке мы выводили текст на экран. 
+Сегодня напишем программу, которая позволяет ввести текст с клавиатуры:</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF66">
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    import</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    java</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">io</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">IOException</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    public</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    class</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    Example2 </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    public</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    static</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    void</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    main</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">String</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">[]</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    args</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    char</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    inChar</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">println</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"Input 
+    simbol"</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    try</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inChar</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">=(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">char</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">System</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">in</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">read</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">();</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">println</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"You 
+    input "</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">+</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">inChar</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    catch</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">&nbsp;
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    (</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">IOException 
+    e</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">println</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"Input 
+    ERROR"</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b></p>
+    <p class="MsoNormal"><b>
+    <span style="font-size: 10.0pt; line-height: 115%; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b></p></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+Скомпилируйте и запустите программу. Вы увидите вот такую картину:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Теперь 
+разберем текст программы.&nbsp; Он у нас начинается с команды подключения 
+библиотеки <span lang="en-us">IOException:</span></p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF66"><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    import</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    java</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">io</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">IOException</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">;</span></b></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Эта 
+библиотека нам нужно для использования класса <span lang="en-us">IOException -
+</span>исключение ввода вывода: если возникнет ошибка ввода вывода то будут 
+выполнены команды после <span lang="en-us">catch (</span>которые заключены в
+<span lang="en-us">{}).</span> До исключений мы еще доберемся, а сейчас я скажу 
+только одно - без обработчика исключений в <span lang="en-us">Java </span>
+операции ввода быть не могут (как ввод с клавиатуры, так и из файла). Именно 
+поэтому строка, где у нас происходит ввод с клавиатуры, взят в
+<span lang="en-us">try {...} catch (IOException e) {...}</span>:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF66">
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    try</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inChar</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">=(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">char</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">System</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">in</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">read</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">();</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">println</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"You 
+    input "</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">+</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">inChar</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF66">
+    catch</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">&nbsp;
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    (</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">IOException 
+    e</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">println</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"Input 
+    ERROR"</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b></p>
+    </td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">если 
+попытаться сделать просто без <span lang="en-us">&nbsp;{...} catch (IOException 
+e) {...}</span>:</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF66">
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inChar</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">=(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">char</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">System</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">in</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">read</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">();</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">println</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"You 
+    input "</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">+</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">inChar</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    </td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">то 
+программа просто не скомпилируется.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+
+			                  </div>

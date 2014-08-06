@@ -1,0 +1,274 @@
+﻿<div class="the-post-container">
+						
+				
+				<header class="entry-header">
+					
+										<!-- Title / Page Headline -->
+					<h3 class="entry-title" title="Создание меню опций и контекстного меню в Android. Как сделать контекстное меню для вашего приложения.">Создание меню опций и контекстного меню в Android. Как сделать контекстное меню для вашего приложения.</h3>
+										
+										
+				</header>
+
+				<!-- Page Text and Main Content -->
+				<div class="entry-content clearfix">
+					<p>Предоставить пользователю меню опций (вызывается по нажатию кнопки «Menu» девайса) и контекстного меню — это хороший путь улучшить юзабилити, за которое вам скажут спасибо. В статье мы рассмотрим создание&nbsp;<strong>ContextMenu</strong>, <strong>OptionsMenu</strong>, <strong>CheckableMenu …</strong></p>
+<p><span id="more-5762"></span></p>
+<h3>Постановка задачи</h3>
+<p>Создадим две активности, одна из них будет содержать следующую функциональность:</p>
+<p></p>
+<ul>
+<li>Меню опций, активируемое нажатием соответствующей кнопки на девайсе (в случае планшета это будет виртуальная кнопка)</li>
+<li>Меню должно включать в себя: кнопку перехода на вторую активность, группу из 2 кнопок, кнопку, меняющую видимость группы кнопок, подменю.</li>
+</ul>
+<p>
+</p><p>И для второй активности:</p>
+<p></p>
+<ul>
+<li>Контекстное меню, активируемое длинным нажатием на экран</li>
+<li>Контекстное меню содержит <strong>CheckableGroup&nbsp;</strong></li>
+</ul>
+<p>
+</p><h3>Шаг 1: описание меню в xml-файлах</h3>
+<p>Для описания меню (как контекстного, так и меню опций) создадим папку <strong>res/menu</strong> и два файла в ней:&nbsp;<strong>options.xml</strong>&nbsp;и&nbsp;<strong>context.xml</strong>&nbsp;<strong>. </strong>Они будут содержать описание вида нашего меню, приведу код:</p>
+<pre class="prettyprint"><span class="pun">&lt;?</span><span class="pln">xml version</span><span class="pun">=</span><span class="str">"1.0"</span><span class="pln"> encoding</span><span class="pun">=</span><span class="str">"utf-8"</span><span class="pun">?&gt;</span><span class="pln">
+</span><span class="tag">&lt;menu</span><span class="pln">
+  </span><span class="atn">xmlns:android</span><span class="pun">=</span><span class="atv">"http://schemas.android.com/apk/res/android"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="com">&lt;!-- Простые пункты меню --&gt;</span><span class="pln">
+    </span><span class="tag">&lt;item</span><span class="pln">
+        </span><span class="atn">android:id</span><span class="pun">=</span><span class="atv">"@+id/option_button_next"</span><span class="pln">
+        </span><span class="atn">android:icon</span><span class="pun">=</span><span class="atv">"@android:drawable/ic_media_next"</span><span class="pln">
+        </span><span class="atn">android:title</span><span class="pun">=</span><span class="atv">"Сменить активнось"</span><span class="tag">/&gt;</span><span class="pln">
+    </span><span class="tag">&lt;item</span><span class="pln">
+        </span><span class="atn">android:id</span><span class="pun">=</span><span class="atv">"@+id/option_button_show_group"</span><span class="pln">
+        </span><span class="atn">android:icon</span><span class="pun">=</span><span class="atv">"@android:drawable/ic_input_delete"</span><span class="pln">
+        </span><span class="atn">android:title</span><span class="pun">=</span><span class="atv">"Показать группу 1"</span><span class="tag">/&gt;</span><span class="pln">
+ 
+    </span><span class="com">&lt;!-- Описание пункта с подменю --&gt;</span><span class="pln">
+    </span><span class="tag">&lt;item</span><span class="pln">
+        </span><span class="atn">android:id</span><span class="pun">=</span><span class="atv">"@+id/options_submenu"</span><span class="pln">
+        </span><span class="atn">android:icon</span><span class="pun">=</span><span class="atv">"@android:drawable/ic_menu_more"</span><span class="pln">
+        </span><span class="atn">android:title</span><span class="pun">=</span><span class="atv">"Подменю"</span><span class="tag">&gt;</span><span class="pln">
+        </span><span class="com">&lt;!-- Описание самого подменю --&gt;</span><span class="pln">
+        </span><span class="tag">&lt;menu&gt;</span><span class="pln">
+            </span><span class="tag">&lt;item</span><span class="pln">
+                </span><span class="atn">android:id</span><span class="pun">=</span><span class="atv">"@+id/submenu_button_say"</span><span class="pln">
+                </span><span class="atn">android:title</span><span class="pun">=</span><span class="atv">"Сказать привет"</span><span class="tag">/&gt;</span><span class="pln">
+            </span><span class="tag">&lt;item</span><span class="pln">
+                </span><span class="atn">android:id</span><span class="pun">=</span><span class="atv">"@+id/submenu_button_cancel"</span><span class="pln">
+                </span><span class="atn">android:title</span><span class="pun">=</span><span class="atv">"Отмена"</span><span class="tag">/&gt;</span><span class="pln">
+        </span><span class="tag">&lt;/menu&gt;</span><span class="pln">
+        </span><span class="tag">&lt;/item&gt;</span><span class="pln">
+ 
+    </span><span class="com">&lt;!-- Объединение элементов в группы --&gt;</span><span class="pln">
+    </span><span class="tag">&lt;group</span><span class="pln">
+        </span><span class="atn">android:id</span><span class="pun">=</span><span class="atv">"@+id/group_1"</span><span class="pln">
+        </span><span class="atn">android:visible</span><span class="pun">=</span><span class="atv">"false"</span><span class="tag">&gt;</span><span class="pln">
+        </span><span class="tag">&lt;item</span><span class="pln">
+            </span><span class="atn">android:id</span><span class="pun">=</span><span class="atv">"@+id/group_button_1"</span><span class="pln">
+            </span><span class="atn">android:icon</span><span class="pun">=</span><span class="atv">"@android:drawable/ic_menu_camera"</span><span class="pln">
+            </span><span class="atn">android:title</span><span class="pun">=</span><span class="atv">"Кнопка 1 группы"</span><span class="tag">/&gt;</span><span class="pln">
+        </span><span class="tag">&lt;item</span><span class="pln">
+            </span><span class="atn">android:id</span><span class="pun">=</span><span class="atv">"@+id/group_button_2"</span><span class="pln">
+            </span><span class="atn">android:icon</span><span class="pun">=</span><span class="atv">"@android:drawable/ic_menu_compass"</span><span class="pln">
+            </span><span class="atn">android:title</span><span class="pun">=</span><span class="atv">"Кнопка 2 группы"</span><span class="tag">/&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/group&gt;</span><span class="pln">
+ 
+</span><span class="tag">&lt;/menu&gt;</span></pre>
+<p>Описание контекстного меню будет иметь вид:</p>
+<pre class="prettyprint"><span class="pun">&lt;?</span><span class="pln">xml version</span><span class="pun">=</span><span class="str">"1.0"</span><span class="pln"> encoding</span><span class="pun">=</span><span class="str">"utf-8"</span><span class="pun">?&gt;</span><span class="pln">
+</span><span class="tag">&lt;menu</span><span class="pln">
+  </span><span class="atn">xmlns:android</span><span class="pun">=</span><span class="atv">"http://schemas.android.com/apk/res/android"</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;group</span><span class="pln">
+        </span><span class="atn">android:checkableBehavior</span><span class="pun">=</span><span class="atv">"single"</span><span class="tag">&gt;</span><span class="pln">
+        </span><span class="tag">&lt;item</span><span class="pln">
+            </span><span class="atn">android:id</span><span class="pun">=</span><span class="atv">"@+id/button_red"</span><span class="pln">
+            </span><span class="atn">android:title</span><span class="pun">=</span><span class="atv">"Red"</span><span class="tag">/&gt;</span><span class="pln">
+        </span><span class="tag">&lt;item</span><span class="pln">
+            </span><span class="atn">android:id</span><span class="pun">=</span><span class="atv">"@+id/button_green"</span><span class="pln">
+            </span><span class="atn">android:title</span><span class="pun">=</span><span class="atv">"Green"</span><span class="tag">/&gt;</span><span class="pln">
+        </span><span class="tag">&lt;item</span><span class="pln">
+            </span><span class="atn">android:id</span><span class="pun">=</span><span class="atv">"@+id/button_blue"</span><span class="pln">
+            </span><span class="atn">android:title</span><span class="pun">=</span><span class="atv">"Blue"</span><span class="tag">/&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/group&gt;</span><span class="pln">
+</span><span class="tag">&lt;/menu&gt;</span></pre>
+<p>Как вы думаю заметили, содержание отличается не сильно. Давайте пройдемся по его элементам:<br>
+</p>
+<ul>
+<li>Элемент <strong></strong> представляет собой пункт меню, его атрибуты понятны, отмечу лишь что ресурсы вида <strong>@android:drawable/ic_menu_ </strong>это системные ресурсы для представления картинок пунктов меню, используйте их, если ваше приложение не требует изощренного дизайна.</li>
+<li>Конструкция вида:
+<pre class="prettyprint"><span class="tag">&lt;item&gt;</span><span class="pln">
+    </span><span class="tag">&lt;menu&gt;</span><span class="pln">
+        ....
+    </span><span class="tag">&lt;/menu&gt;</span><span class="pln">
+</span><span class="tag">&lt;/item&gt;</span></pre>
+<p>служит для представления подменю. Вложенность может быть только в один уровень. Чаще всего этого достаточно.</p></li>
+<li>Элемент <strong><code class="prettyprint"><span class="pln"> </span></code></strong>позволяет объединять пункты в группы, это может быть необходимо для создания <strong>RadioButton</strong>, как во втором файле, либо для управления группой как одним элементом с помощью методов <strong>setGroupVisible()</strong>, <strong>setGroupEnabled()</strong> и <strong>setGroupCheckable()</strong> .</li>
+</ul>
+<p></p>
+<p>Замечу, что в описание разметки для контекстного меню атрибут <strong>icon</strong> не указывался, так как отображаться он не будет. Хотя его указание не помещает работе программы.</p>
+<h3>Шаг 2: java-описание логики работы меню</h3>
+<p>Дело это не сложное, нужно лишь перегрузить пару методов и уметь пользоваться <strong>switch-case:</strong></p>
+<pre class="prettyprint"><span class="kwd">package</span><span class="pln"> </span><span class="kwd">by</span><span class="pun">.</span><span class="pln">idev</span><span class="pun">.</span><span class="pln">android</span><span class="pun">.</span><span class="pln">menutrial</span><span class="pun">.</span><span class="pln">activities</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">import</span><span class="pln"> android</span><span class="pun">.</span><span class="pln">app</span><span class="pun">.</span><span class="typ">Activity</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> android</span><span class="pun">.</span><span class="pln">content</span><span class="pun">.</span><span class="typ">Intent</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> android</span><span class="pun">.</span><span class="pln">os</span><span class="pun">.</span><span class="typ">Bundle</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> android</span><span class="pun">.</span><span class="pln">view</span><span class="pun">.</span><span class="typ">Menu</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> android</span><span class="pun">.</span><span class="pln">view</span><span class="pun">.</span><span class="typ">MenuInflater</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> android</span><span class="pun">.</span><span class="pln">view</span><span class="pun">.</span><span class="typ">MenuItem</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> android</span><span class="pun">.</span><span class="pln">widget</span><span class="pun">.</span><span class="typ">Toast</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> </span><span class="kwd">by</span><span class="pun">.</span><span class="pln">idev</span><span class="pun">.</span><span class="pln">android</span><span class="pun">.</span><span class="pln">menutrial</span><span class="pun">.</span><span class="pln">R</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">IdevMenuTrialActivity</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">Activity</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+	</span><span class="typ">Menu</span><span class="pln"> menu</span><span class="pun">;</span><span class="pln">
+	</span><span class="kwd">boolean</span><span class="pln"> isGroupVisible </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+
+	</span><span class="com">/** Called when the activity is first created. */</span><span class="pln">
+	</span><span class="lit">@Override</span><span class="pln">
+	</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> onCreate</span><span class="pun">(</span><span class="typ">Bundle</span><span class="pln"> savedInstanceState</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+		</span><span class="kwd">super</span><span class="pun">.</span><span class="pln">onCreate</span><span class="pun">(</span><span class="pln">savedInstanceState</span><span class="pun">);</span><span class="pln">
+		setContentView</span><span class="pun">(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">layout</span><span class="pun">.</span><span class="pln">main</span><span class="pun">);</span><span class="pln">
+	</span><span class="pun">}</span><span class="pln">
+
+	</span><span class="lit">@Override</span><span class="pln">
+	</span><span class="com">// Метод вызывается при нажатии на кнопку Menu девайса</span><span class="pln">
+	</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pln"> onCreateOptionsMenu</span><span class="pun">(</span><span class="typ">Menu</span><span class="pln"> menu</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+		</span><span class="typ">MenuInflater</span><span class="pln"> inflater </span><span class="pun">=</span><span class="pln"> getMenuInflater</span><span class="pun">();</span><span class="pln">
+		inflater</span><span class="pun">.</span><span class="pln">inflate</span><span class="pun">(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">menu</span><span class="pun">.</span><span class="pln">options</span><span class="pun">,</span><span class="pln"> menu</span><span class="pun">);</span><span class="pln">
+		</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">menu </span><span class="pun">=</span><span class="pln"> menu</span><span class="pun">;</span><span class="pln">
+		</span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">super</span><span class="pun">.</span><span class="pln">onCreateOptionsMenu</span><span class="pun">(</span><span class="pln">menu</span><span class="pun">);</span><span class="pln">
+	</span><span class="pun">}</span><span class="pln">
+
+	</span><span class="lit">@Override</span><span class="pln">
+	</span><span class="com">// Обработка нажатия на пункт меню</span><span class="pln">
+	</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pln"> onOptionsItemSelected</span><span class="pun">(</span><span class="typ">MenuItem</span><span class="pln"> item</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+		</span><span class="kwd">switch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">item</span><span class="pun">.</span><span class="pln">getItemId</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+		</span><span class="kwd">case</span><span class="pln"> R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">option_button_next</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			</span><span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Intent</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">,</span><span class="pln"> </span><span class="typ">NextActivity</span><span class="pun">.</span><span class="kwd">class</span><span class="pun">);</span><span class="pln">
+			startActivity</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">);</span><span class="pln">
+			</span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+		</span><span class="pun">}</span><span class="pln">
+
+		</span><span class="kwd">case</span><span class="pln"> R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">option_button_show_group</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			isGroupVisible </span><span class="pun">=</span><span class="pln"> </span><span class="pun">!</span><span class="pln">isGroupVisible</span><span class="pun">;</span><span class="pln">
+			</span><span class="typ">String</span><span class="pln"> itemTittle </span><span class="pun">=</span><span class="pln"> isGroupVisible </span><span class="pun">?</span><span class="pln"> </span><span class="str">"Спрятать группу 1"</span><span class="pln">
+					</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Показать группу 1"</span><span class="pun">;</span><span class="pln">
+			item</span><span class="pun">.</span><span class="pln">setTitle</span><span class="pun">(</span><span class="pln">itemTittle</span><span class="pun">);</span><span class="pln">
+			</span><span class="com">// Пример обработки группы</span><span class="pln">
+			menu</span><span class="pun">.</span><span class="pln">setGroupVisible</span><span class="pun">(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">group_1</span><span class="pun">,</span><span class="pln"> isGroupVisible</span><span class="pun">);</span><span class="pln">
+			</span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+		</span><span class="pun">}</span><span class="pln">
+
+		</span><span class="kwd">case</span><span class="pln"> R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">group_button_1</span><span class="pun">:</span><span class="pln">
+		</span><span class="kwd">case</span><span class="pln"> R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">group_button_2</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			</span><span class="typ">String</span><span class="pln"> message </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Была нажата кнопка "</span><span class="pun">+</span><span class="pln">item</span><span class="pun">.</span><span class="pln">getTitle</span><span class="pun">();</span><span class="pln">
+			</span><span class="typ">Toast</span><span class="pun">.</span><span class="pln">makeText</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">,</span><span class="pln"> message</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Toast</span><span class="pun">.</span><span class="pln">LENGTH_SHORT</span><span class="pun">)</span><span class="pln">
+				</span><span class="pun">.</span><span class="pln">show</span><span class="pun">();</span><span class="pln">
+			</span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+		</span><span class="pun">}</span><span class="pln">
+
+		</span><span class="kwd">case</span><span class="pln"> R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">submenu_button_say</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			</span><span class="typ">Toast</span><span class="pun">.</span><span class="pln">makeText</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Не дави на меня"</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Toast</span><span class="pun">.</span><span class="pln">LENGTH_LONG</span><span class="pun">).</span><span class="pln">show</span><span class="pun">();</span><span class="pln">
+			</span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+		</span><span class="pun">}</span><span class="pln">
+
+		</span><span class="kwd">case</span><span class="pln"> R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">submenu_button_cancel</span><span class="pun">:</span><span class="pln">
+			</span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+
+		</span><span class="kwd">default</span><span class="pun">:</span><span class="pln">
+			</span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">super</span><span class="pun">.</span><span class="pln">onOptionsItemSelected</span><span class="pun">(</span><span class="pln">item</span><span class="pun">);</span><span class="pln">
+		</span><span class="pun">}</span><span class="pln">
+	</span><span class="pun">}</span><span class="pln">
+
+</span><span class="pun">}</span></pre>
+<p>В этом коде мы описали логику работы активности по работе с меню опций, основные действия тут таковы:</p>
+<p></p>
+<ul>
+<li>Перегрузить метод <strong>onCreateOptionsMenu()</strong>, он вызывается всякий раз при появлении меню на экране. В нем мы должны «надуть» меню в соответствии с его разметкой при помощи <strong>MenuInflator</strong>.</li>
+<li>Перегрузить метод onOptionsItemselected(), который инкапсулирует логику по определению того, какой пункт меню был выбран и что по этому поводу нужно сделать.</li>
+</ul>
+<p>
+</p><p>Теперь внимательно посмотрите на описание активности с контекстным меню:</p>
+<pre class="prettyprint"><span class="kwd">package</span><span class="pln"> </span><span class="kwd">by</span><span class="pun">.</span><span class="pln">idev</span><span class="pun">.</span><span class="pln">android</span><span class="pun">.</span><span class="pln">menutrial</span><span class="pun">.</span><span class="pln">activities</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">import</span><span class="pln"> </span><span class="kwd">by</span><span class="pun">.</span><span class="pln">idev</span><span class="pun">.</span><span class="pln">android</span><span class="pun">.</span><span class="pln">menutrial</span><span class="pun">.</span><span class="pln">R</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> android</span><span class="pun">.</span><span class="pln">app</span><span class="pun">.</span><span class="typ">Activity</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> android</span><span class="pun">.</span><span class="pln">graphics</span><span class="pun">.</span><span class="typ">Color</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> android</span><span class="pun">.</span><span class="pln">os</span><span class="pun">.</span><span class="typ">Bundle</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> android</span><span class="pun">.</span><span class="pln">view</span><span class="pun">.</span><span class="typ">ContextMenu</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> android</span><span class="pun">.</span><span class="pln">view</span><span class="pun">.</span><span class="typ">ContextMenu</span><span class="pun">.</span><span class="typ">ContextMenuInfo</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> android</span><span class="pun">.</span><span class="pln">view</span><span class="pun">.</span><span class="typ">MenuInflater</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> android</span><span class="pun">.</span><span class="pln">view</span><span class="pun">.</span><span class="typ">MenuItem</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> android</span><span class="pun">.</span><span class="pln">view</span><span class="pun">.</span><span class="typ">View</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> android</span><span class="pun">.</span><span class="pln">widget</span><span class="pun">.</span><span class="typ">LinearLayout</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">NextActivity</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">Activity</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+	</span><span class="typ">LinearLayout</span><span class="pln"> layout</span><span class="pun">;</span><span class="pln">
+	</span><span class="kwd">int</span><span class="pln"> currentItemIndex </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+
+	</span><span class="lit">@Override</span><span class="pln">
+	</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> onCreate</span><span class="pun">(</span><span class="typ">Bundle</span><span class="pln"> savedInstanceState</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+		</span><span class="kwd">super</span><span class="pun">.</span><span class="pln">onCreate</span><span class="pun">(</span><span class="pln">savedInstanceState</span><span class="pun">);</span><span class="pln">
+		setContentView</span><span class="pun">(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">layout</span><span class="pun">.</span><span class="kwd">next</span><span class="pun">);</span><span class="pln">
+		</span><span class="com">/*Чтобы элемент интерфейса имел
+		 * контекстное меню, его нужно
+		 * зарегистрировать*/</span><span class="pln">
+		layout </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="typ">LinearLayout</span><span class="pun">)</span><span class="pln"> findViewById</span><span class="pun">(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">next_layout</span><span class="pun">);</span><span class="pln">
+		registerForContextMenu</span><span class="pun">(</span><span class="pln">layout</span><span class="pun">);</span><span class="pln">
+	</span><span class="pun">}</span><span class="pln">
+
+	</span><span class="lit">@Override</span><span class="pln">
+	</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> onCreateContextMenu</span><span class="pun">(</span><span class="typ">ContextMenu</span><span class="pln"> menu</span><span class="pun">,</span><span class="pln"> </span><span class="typ">View</span><span class="pln"> v</span><span class="pun">,</span><span class="pln">
+			</span><span class="typ">ContextMenuInfo</span><span class="pln"> menuInfo</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+		</span><span class="kwd">super</span><span class="pun">.</span><span class="pln">onCreateContextMenu</span><span class="pun">(</span><span class="pln">menu</span><span class="pun">,</span><span class="pln"> v</span><span class="pun">,</span><span class="pln"> menuInfo</span><span class="pun">);</span><span class="pln">
+		menu</span><span class="pun">.</span><span class="pln">setHeaderTitle</span><span class="pun">(</span><span class="str">"Set background to:"</span><span class="pun">);</span><span class="pln">
+		</span><span class="com">//Если вы хотите сделать несколько</span><span class="pln">
+		</span><span class="com">// контекстных меню для разные элементов</span><span class="pln">
+		</span><span class="com">// интерфейса, то отличать их можно по id</span><span class="pln">
+		</span><span class="kwd">switch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">v</span><span class="pun">.</span><span class="pln">getId</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+		</span><span class="kwd">case</span><span class="pln"> R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">next_layout</span><span class="pun">:</span><span class="pln">
+			</span><span class="typ">MenuInflater</span><span class="pln"> inflater </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">MenuInflater</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">);</span><span class="pln">
+			inflater</span><span class="pun">.</span><span class="pln">inflate</span><span class="pun">(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">menu</span><span class="pun">.</span><span class="pln">context</span><span class="pun">,</span><span class="pln"> menu</span><span class="pun">);</span><span class="pln">
+		</span><span class="pun">}</span><span class="pln">
+		menu</span><span class="pun">.</span><span class="pln">getItem</span><span class="pun">(</span><span class="pln">currentItemIndex</span><span class="pun">).</span><span class="pln">setChecked</span><span class="pun">(</span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+	</span><span class="pun">}</span><span class="pln">
+
+	</span><span class="lit">@Override</span><span class="pln">
+	</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pln"> onContextItemSelected</span><span class="pun">(</span><span class="typ">MenuItem</span><span class="pln"> item</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+		item</span><span class="pun">.</span><span class="pln">setChecked</span><span class="pun">(</span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+		</span><span class="kwd">switch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">item</span><span class="pun">.</span><span class="pln">getItemId</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+		</span><span class="kwd">case</span><span class="pln"> R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">button_red</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			currentItemIndex </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+			layout</span><span class="pun">.</span><span class="pln">setBackgroundColor</span><span class="pun">(</span><span class="typ">Color</span><span class="pun">.</span><span class="pln">RED</span><span class="pun">);</span><span class="pln">
+			</span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+		</span><span class="pun">}</span><span class="pln">
+		</span><span class="kwd">case</span><span class="pln"> R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">button_green</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			currentItemIndex </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+			layout</span><span class="pun">.</span><span class="pln">setBackgroundColor</span><span class="pun">(</span><span class="typ">Color</span><span class="pun">.</span><span class="pln">GREEN</span><span class="pun">);</span><span class="pln">
+			</span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+		</span><span class="pun">}</span><span class="pln">
+		</span><span class="kwd">case</span><span class="pln"> R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">button_blue</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			currentItemIndex </span><span class="pun">=</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln">
+			layout</span><span class="pun">.</span><span class="pln">setBackgroundColor</span><span class="pun">(</span><span class="typ">Color</span><span class="pun">.</span><span class="pln">BLUE</span><span class="pun">);</span><span class="pln">
+			</span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+		</span><span class="pun">}</span><span class="pln">
+		</span><span class="kwd">default</span><span class="pun">:</span><span class="pln">
+			</span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">super</span><span class="pun">.</span><span class="pln">onContextItemSelected</span><span class="pun">(</span><span class="pln">item</span><span class="pun">);</span><span class="pln">
+		</span><span class="pun">}</span><span class="pln">
+	</span><span class="pun">}</span><span class="pln">
+
+</span><span class="pun">}</span></pre>
+<p>Тут как мы и ожидали все очень похоже, изменились только названия методов и появилась привязка (регистрация) контекстного меню к виджету. Основные действия такие:</p>
+<p></p>
+<ul>
+<li>При создании активности применить метод <strong>registerForContextMenu()</strong> к виджетам которым вы хотите добавить контекстное меню.</li>
+<li>Перегрузить метод &nbsp;<strong>onCreateContextMenu()</strong>, аналогичный методу описанному выше. Но как видим, параметров здесь больше, один из них — это виджет на который мы давили пальцами чтобы вызвать меню, второй — информация об этом виджете, например это может быть позиция элемента в списке.</li>
+<li>Перегрузить метод <strong>onContextItemSelected()</strong>, который в точности повторяет соответствующий метод для меню опций.</li>
+</ul>
+<p>
+
+
+			</div>

@@ -1,0 +1,298 @@
+﻿<div class="main">
+                      				
+		<table class="contentpaneopen">
+					<tbody>
+						
+			<td valign="top" colspan="2">
+
+
+<h1 align="center"><strong><span lang="ru">Программа </span>Hello World!</strong></h1><p>
+
+</p><p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+Для начала я расскажу, что может <span lang="en-us">Java. </span>Во первых, на 
+этом языке можно написать апплеты - программки, внедряемые в <span lang="en-us">
+web-</span>страницу сайта. Например, это может быть игра, система бизнес графики 
+и многое другое. Во вторых, на <span lang="en-us">Java </span>можно писать и 
+полноценные приложения, не обязательно связанные с <span lang="en-us">Web.
+</span>А можно и сервлеты - программы, которые в отличии от апплетов, 
+выполняются не на стороне клиента, а на стороне сервера. </p>
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+<span lang="ru">Начнем с самых самых основ. Отдадим дань традиции и&nbsp; 
+напишем простейшую программу, которая выводит на экран приветствие </span>Hello World. <span lang="ru">Если у вас нет </span>Java,
+<span lang="ru">то ее можно скачать с официального сайта
+<a href="http://www.java.com/ru/">http://www.java.com/ru. </a></span>&nbsp;<span lang="ru">Затем 
+установите его. </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+<span lang="ru">Если </span>Java <span lang="ru">у вас установлен, то&nbsp; 
+наберите в каком нибудь редакторе вот такой текст:</span></p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF66">
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    public</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    class</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    HellowWorld </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    public</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    static</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    void</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    main</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">String</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">[]</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    args</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">)</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">print</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"Hellow</span><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">, 
+    world!"</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b></p>
+    <p class="MsoNormal"><b>
+    <span style="font-size: 10.0pt; line-height: 115%; font-family: Courier New; color: navy; background: #FFFF66">
+    }</span></b></p></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+<span lang="ru">И обязательно сохраните его под именем</span> <span lang="ru">&nbsp;HellowWorld.</span>java 
+- <span lang="ru">имя исполняемого класса должно совпадать с именем файла. Для 
+компиляции используйте программу </span>javac.exe<span lang="ru">, входящую в 
+стандартный пакет </span>Java. <span lang="ru">Вот как может выглядеть батник 
+компиляции</span> <span lang="ru">этого </span>java <span lang="ru">файла:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF66">
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    "c:\Program Files\Java\jdk1.7.0\bin\javac" HellowWorld.java</span></p>
+    <p class="MsoNormal"><b>
+    <span style="font-size: 10.0pt; line-height: 115%; font-family: Courier New; color: blue; background: #FFFF66">
+    pause</span></b></p></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+<span lang="ru">Если при компиляции никаких ошибок не выскочило:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+<span lang="ru">то, скорее всего, компиляция прошла успешно и у вас в 
+том же каталоге, где лежал HellowWorld.</span>java <span lang="ru">появился еще 
+и HellowWorld</span>.class:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Теперь 
+запустим другой батник, который вызовет интерпретатор <span lang="en-us">Java
+</span>вместе с нашим скомпилированным файлом:</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF66">
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    "c:\Program Files\Java\jdk1.7.0\bin\java" HellowWorld</span></p>
+    <p class="MsoNormal"><b>
+    <span style="font-size: 10.0pt; line-height: 115%; font-family: Courier New; color: blue; background: #FFFF66">
+    pause</span></b></p></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Если все 
+сделано правильно, то у вас должен получиться вот такой результат:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Если вы 
+его получили, то могу вас поздравить - вы написали свою первую программу на
+<span lang="en-us">Java. </span>В дальнейшем мы научимся писать
+<span lang="en-us">Java-</span>апплеты, и много другое. А сейчас несколько слов 
+о самой программе. Как вы заметили, она начинается со слова <span lang="en-us">
+public. </span>Это модификатор, который обозначает, что мы объявляем что ли 
+общедоступное: класс, метод класса или переменную. Бывают и другие модификаторы, 
+например: <span lang="en-us">private, protected, friendly, final, abstract, 
+static. </span>Некоторые из них можно комбинировать между собой. Например,
+<span lang="en-us">private </span>обозначает, что к переменная, которую мы хотим 
+объявить, закрыта для других классов. Но до модификатор мы еще доберемся. А 
+сейчас рассмотрим следующее ключевое слово <span lang="en-us">class. </span>Оно 
+обозначает, что мы объявляем класс. В <span lang="en-us">java </span>все 
+строиться на классах. Один из классов обязательно является базовым. И базовый 
+класс обязательно должен быть <span lang="en-us">public.</span> В данном примере 
+это класса <span lang="en-us">HelloWord. </span>Пока он у нас единственный.&nbsp; </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Теперь 
+попытаюсь объяснить простыми словами, что же такое <i>класс</i> и что такое <i>
+объект</i>. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Вспомним 
+школьный курс зоологии. Как классифицируется живой мир? Сначала вводиться 
+понятие «царство»<span lang="en-us">.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 63.0pt">
+<span lang="en-us">1. </span>Царство одноклеточных, </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 63.0pt">
+<font size="3">
+<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman" lang="en-us">2.
+</span></font>Царство растения </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 63.0pt">
+<font size="3">
+<span style="font-family: Symbol; font-style:normal; font-variant:normal; font-weight:normal" lang="en-us">3. </span></font>Царство животные. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Возьмем 
+животных. Их можно разделить по типам. Например:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 63.0pt">
+<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman"><font size="3">
+1. </font>
+</span>Тип кишечнополостные.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 63.0pt">
+<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman"><font size="3">2. </font>
+</span>Тип плоские черви.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 63.0pt">
+<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman"><font size="3">3. </font>
+</span>Тип моллюски.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 63.0pt">
+<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman"><font size="3">4. </font>
+</span>Тип хордовые.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Последние 
+делятся на млекопитающих, пресмыкающихся, земноводных, птиц и т. д. Можно еще 
+дальше углубиться в классификацию, но сейчас мы это делать не будем, а перейдем 
+непосредственно к программированию. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">В языке
+<span lang="en-us">Java</span>, можно, подобно классификации живого мира, 
+классифицировать объекты (куски программы и данных). Для этого в нем есть классы<span lang="EN-US">.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">- Стоп 
+стоп! – скажете Вы, - а зачем классифицировать эти объекты?</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+Представить себе, что Вы, подобно некому демиургу (творцу, богу), создаете жизнь 
+на Земле. Сперва Вы разработали простейшие органические соединения. Так, ради 
+эксперимента, что же получиться. Затем объединили их в сложные молекулы, из 
+которых, как из кирпичиков, собрали простейшие микроорганизмы. Но Ваша конечная 
+цель – создание разумной жизни. Поэтому вы не остановились на достигнутом, А 
+сотворили многоклеточные организмы. Затем стали улучшать их, развивать. 
+Некоторые виды оказались жизнеспособные, некоторые вымерли (динозавры).&nbsp; И вот 
+наконец цель достигнута – появился <span lang="EN-US">Homo Sapiens</span> – 
+человек разумный.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">А теперь 
+опустимся с небес на землю и представим программирование как творение, где вы 
+свою программу заставляете эволюционировать до какого то определенного 
+состояние, когда ее можно использовать, а затем и дальше, постепенно наращивая и 
+улучшая функционал.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">А теперь 
+представим, что атом – это простейшая команда программы или единица информации 
+(что друг от друга, согласитесь, не отделимы, ибо программа работает с чем – 
+правильно, с информацией). </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Тогда 
+молекула – это подпрограмма. Или объект.&nbsp; </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Вот мы 
+создали в своей программе кучу объектов. Надо же их как то классифицировать, что 
+бы не запутаться. Вот для этого в <span lang="en-us">Java</span>&nbsp; и 
+предусмотрены классы (<span lang="EN-US">class</span>). С помощью них мы 
+описываем класс объектов (общее понятие, например птицы), а потом, имея 
+описанный класс можем создать объект – экземпляр этого класса. То есть, класс – 
+это само слово Птицы, а объект – это какая то конкретная птица, если продолжать 
+нашу аналогию. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Далее, 
+птицы бывают разных видов. Но все они имеют какие общие признаки, унаследованные 
+от понятия «Птицы». Так и в <span lang="en-us">Java</span>, от класса можно 
+создать другой класс, который наследует его свойства и методы (признаки). Это 
+называется <i>наследование. </i></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">У разных 
+птиц разный окрас перьев, форма клюва и крыльев. Так и у классов, при создании 
+нового класса, унаследованные признаки можно менять. Это называется <i>
+полиморфизм</i>. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Так, с 
+основными понятиями <span lang="en-us">Java </span>разобрались.&nbsp; Теперь 
+пройдемся по программе. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Вот таким 
+вот образом мы объявляем класс:</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF66">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    public</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF66">
+    class</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66"> 
+    HellowWorld </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">
+    {</span></b></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">В данном 
+случае в нашей программе класс единственный, и это базовый класс, тоесть, класс, 
+ответственный за запуск программы. Именно поэтому его имя должно совпадать с 
+именем файла, что бы интерпретатор "знал", с чего же начать выполнение 
+программы. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Базовый 
+класс (<span lang="en-us">HelloWorld</span>)<span lang="en-us"> </span>имеет 
+базовый метод<span lang="en-us">: main. </span>Он у нас объявлен как
+<span lang="en-us">public </span>и <span lang="en-us">static. </span>Первый 
+обозначает, что этот метод общедоступный. Если бы это было не так, то программа 
+у нас просто не запустилась бы. Бывают еще и методы не общедоступные, но они мы 
+поговорим в следующих уроках, пока просто запомните, что базовый метод (который 
+у нас запускается при старте программы) должен быть <span lang="en-us">public.
+</span>И его имя должно быть <span lang="en-us">main, </span>что бы 
+интерпретатор знал,&nbsp; с чего начать выполнения программы. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Теперь что 
+такое <span lang="en-us">static. </span>Это модификатор, который показывает, что 
+метод статический. Тоесть, он работает даже тогда, когда экземпляр класса 
+(объект) не создан. Вообще, поля и методы с модификатором&nbsp;
+<span lang="en-us">static </span>являются общими для всех объектов класса. Об 
+этом тоже поговорим в дальнейшем. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Каждый 
+метод может иметь или не иметь возвращаемого значения. Если имеет, то это 
+функция. Тип возвращаемого значения так же ставиться в объявлении метода. Если 
+нет то ставиться <span lang="en-us">void (</span>как в нашем примере). </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">Обращение 
+к полям и методам объекта идет через точку. Есть так же встроенные объекты, 
+например, <span lang="en-us">System, </span>который мы и используем в нашем 
+примере:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF66">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">out</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF66">print</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF66">"Hellow, 
+    world!"</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF66">);</span></b></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">в данном 
+случае мы обращаемся к полю <span lang="en-us">out, </span>которое тоже является 
+объектом, предназначенным для вывода данных и вызываем его метод
+<span lang="en-us">print, </span>который выводить тектс на экран (как в старом 
+добром Бэйсике команда <span lang="en-us">PRINT). </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">(С)
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+
+
+
+			</td>
+		</tr>
+		
+					</tbody></table>
+
+			                  </div>

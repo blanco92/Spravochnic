@@ -1,0 +1,239 @@
+﻿<div class="main">
+                      				
+
+<h1 align="center"><strong> <span lang="ru">Вывод 
+изображения на экран</span></strong></h1>
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+<span lang="ru">Сегодня мы научимся выводить изображения в апплет. И так, вот 
+текст примера:</span></p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF99">
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    import</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    java</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">awt</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.*;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    import</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    java</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">applet</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.*;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    import</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    java</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">net</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.*;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    public</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    class</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    ImageApplet </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    extends</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    Applet </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; Image pic</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">;</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    public</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    void</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    init</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">()</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">&nbsp;
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; URL url</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">getDocumentBase</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">();</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pic</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">=</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">getImage</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">url</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF99">"proba.jpg</span><span style="font-size: 10.0pt; font-family: Courier New; color: gray; background: #FFFF99">"</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    }</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    public</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    void</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    paint</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">Graphics</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    g</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">)</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; g</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">drawImage</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">pic</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF99">0</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF99">0</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">pic</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">getWidth</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span><span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">this</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">),</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">pic</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">getHeight</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span><span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">this</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">),</span><span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">this</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    }</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    }</span></b></p></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+<span lang="ru">После компиляции и запуске </span>HTML <span lang="ru">файла, 
+содержащего данный апплет:</span></p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF99">
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    &lt;html&gt;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span></b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    &lt;body&gt;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    &lt;Applet</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red; background: #FFFF99">
+    Code</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">=</span><b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">"ImageApplet.class"</span></b><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red; background: #FFFF99">
+    Width</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">=</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red; background: #FFFF99">600</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red; background: #FFFF99">
+    Height</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">=</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: red; background: #FFFF99">500</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">&gt;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    &lt;/Applet&gt;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span></b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    &lt;/body&gt;</span></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">
+    &lt;/html&gt;</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">&nbsp;&nbsp;&nbsp;&nbsp;
+    </span></p></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+<span lang="ru">Вы увидите примерно такую картину (в зависимости от того, что у 
+вас в </span>proba.jpg)<span lang="ru">:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+<span lang="ru">Изображение можно масштабировать. Давайте в обработчике события 
+paint введем такой код и перекомпилируем файл:</span></p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF99">
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    public</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    void</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    paint</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">Graphics 
+    g</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">)</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; g</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">drawImage</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">pic</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF99">0</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF99">0</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">pic</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">getWidth</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span><span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">this</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">)<span lang="ru">/</span></span><span lang="ru"><font color="#FF8000"><span style="font-size: 10.0pt; font-family: Courier New; background: #FFFF99">2</span></font></span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">pic</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">getHeight</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span><span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">this</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">)<span lang="ru">/</span></span><span lang="ru"><font color="#FF8000"><span style="font-size: 10.0pt; font-family: Courier New; background: #FFFF99">2</span></font></span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span><span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">this</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    }</span></b></p></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+<span lang="ru">Запустив апплет, увидим такую картину (изображение меньше в два 
+раза):</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+<span lang="ru">Так же можно сделать его непропорциональным:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tbody><tr>
+    <td width="100%" bgcolor="#FFFF99">
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    public</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: #8000FF; background: #FFFF99">
+    void</span><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99"> 
+    paint</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">Graphics 
+    g</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">)</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    {</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; g</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">.</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">drawImage</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">(</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">pic</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF99">0</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span></b><span style="font-size: 10.0pt; font-family: Courier New; color: #FF8000; background: #FFFF99">0</span><b><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span><font color="#FF8000"><span lang="ru" style="font-size: 10.0pt; font-family: Courier New; background: #FFFF99">100</span></font><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span><font color="#FF8000"><span lang="ru" style="font-size: 10.0pt; font-family: Courier New; background: #FFFF99">300</span></font><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">,</span><span style="font-size: 10.0pt; font-family: Courier New; color: blue; background: #FFFF99">this</span><span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">);</span></b></p>
+    <p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black; background: #FFFF99">
+    &nbsp;&nbsp;&nbsp; </span><b>
+    <span style="font-size: 10.0pt; font-family: Courier New; color: navy; background: #FFFF99">
+    }</span></b></p></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+<span lang="ru">И вот как это будет выглядеть:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 27.0pt">
+			                  </div>
